@@ -1,21 +1,12 @@
 "use client"
 
-import { useContext } from "react"
-import { Link, useNavigate } from "react-router-dom"
-import { AuthContext } from "../context/AuthContext"
+import { Link } from "react-router-dom"
 
 const Navbar = () => {
-  const { currentUser, logout } = useContext(AuthContext)
-  const navigate = useNavigate()
-
-  const handleLogout = () => {
-    logout()
-    navigate("/login")
-  }
-
   return (
     <header className="sticky top-0 z-10 border-b bg-white">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
+        {/* Left Side - Logo */}
         <Link to="/" className="flex items-center gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -34,50 +25,40 @@ const Navbar = () => {
           <span className="text-xl font-bold">ConnectPro</span>
         </Link>
 
-        {currentUser ? (
-          <>
-            <nav className="hidden md:flex">
-              <ul className="flex items-center gap-6">
-                <li>
-                  <Link to="/discover" className="text-gray-500 hover:text-gray-900">
-                    Discover
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/matches" className="text-gray-500 hover:text-gray-900">
-                    Connections
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/profile" className="text-gray-500 hover:text-gray-900">
-                    Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/aboutus" className="text-gray-500 hover:text-gray-900">About Us</Link>
-                </li>
-              </ul>
-            </nav>
-            <div className="flex items-center gap-4">
-              <button onClick={handleLogout} className="text-gray-500 hover:text-gray-900">
-                Log out
-              </button>
-            </div>
-          </>
-        ) : (
-          <div className="flex items-center gap-4">
-            <Link to="/login" className="hidden md:block">
-              <span className="text-gray-500 hover:text-gray-900">Log in</span>
-            </Link>
-            <Link to="/signup">
-              <span className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white">Sign up</span>
-            </Link>
-          </div>
-        )}
+        {/* Center - Navigation Links */}
+        <nav className="hidden md:flex">
+          <ul className="flex items-center gap-6">
+            <li>
+              <Link to="/discover" className="text-gray-500 hover:text-gray-900">
+                Discover
+              </Link>
+            </li>
+            <li>
+              <Link to="/matches" className="text-gray-500 hover:text-gray-900">
+                Connections
+              </Link>
+            </li>
+            <li>
+              <Link to="/aboutus" className="text-gray-500 hover:text-gray-900">
+                About Us
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Right Side - Profile Picture */}
+        <div className="flex items-center">
+          <Link to="/profile">
+            <img
+              src="/uploads/wo1.jpeg"  // Replace with actual profile image URL
+              alt="Profile"
+              className="h-10 w-10 rounded-full border border-gray-300 shadow-sm"
+            />
+          </Link>
+        </div>
       </div>
     </header>
   )
 }
 
 export default Navbar
-

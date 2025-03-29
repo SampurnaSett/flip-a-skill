@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
-import Navbar from "../../new_app/components/Navbar"
+import Navbar from "../components/Navbar"
 import HomePage from "../../new_app/pages/HomePage"
 import DiscoverPage from "../../new_app/pages/DiscoverPage"
 import MatchesPage from "../../new_app/pages/MatchesPage"
@@ -26,41 +26,41 @@ function App() {
               <Route
                 path="/discover"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <DiscoverPage />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
               <Route
                 path="/matches"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <MatchesPage />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
               <Route
                 path="/chat/:id"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <ChatPage />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
               <Route
                 path="/aboutus"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <AboutUs />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
               <Route
                 path="/profile"
                 element={
-                  <ProtectedRoute>
+                  // <ProtectedRoute>
                     <ProfilePage />
-                  </ProtectedRoute>
+                  // </ProtectedRoute>
                 }
               />
             </Routes>

@@ -13,7 +13,7 @@ const DiscoverPage = () => {
       location: "New York, USA",
       skills: ["React", "Node.js", "MongoDB"],
       bio: "Passionate about building scalable web applications.",
-      image: "/uploads/m5.jpg",
+      image: "/uploads/u1.jpg",
     },
     {
       _id: "2",
@@ -26,6 +26,24 @@ const DiscoverPage = () => {
     },
     {
       _id: "3",
+      name: "David Johnson",
+      title: "Data Scientist",
+      location: "San Francisco, USA",
+      skills: ["Python", "Machine Learning", "AI"],
+      bio: "Transforming data into actionable insights.",
+      image: "/uploads/u2.jpg",
+    },
+    {
+      _id: "4",
+      name: "John Mrcus",
+      title: "Ai Engineer",
+      location: "San Francisco, USA",
+      skills: ["Python", "Machine Learning", "AI"],
+      bio: "Transforming data into actionable insights.",
+      image: "/uploads/d9.jpeg",
+    },
+    {
+      _id: "5",
       name: "David Johnson",
       title: "Data Scientist",
       location: "San Francisco, USA",
